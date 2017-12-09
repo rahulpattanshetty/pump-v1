@@ -1,0 +1,17 @@
+<h1>Sales Reports</h1>
+
+
+<%data = {"Diesel" => 0,"Petrol" => 0, "Oil" => 0}%>
+<%d=0%>
+<%p=0%>
+<%@sales.each do |sale|%>
+	<% data["Diesel"] += sale.diesel %>
+	<% data["Petrol"] += sale.petrol %>
+	<% data["Oil"] += sale.oil %>
+	<%end%>
+
+
+<%= pie_chart(data) %>
+<%= column_chart(data) %>
+<%= line_chart (data)%>
+<%= bar_chart (data)%>

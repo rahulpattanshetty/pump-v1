@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Credits</h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone number</th>
+      <th>Oil type</th>
+      <th>Rate</th>
+      <th>Litres</th>
+      <th>Amount</th>
+      <th>Purchase date</th>
+      <th>Is paid</th>
+      <th>Paid date</th>
+      <th>Cash paid</th>
+      <th>Daily</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @credits.each do |credit| %>
+      <tr>
+        <td><%= credit.name %></td>
+        <td><%= credit.phone_number %></td>
+        <td><%= credit.oil_type %></td>
+        <td><%= credit.rate %></td>
+        <td><%= credit.litres %></td>
+        <td><%= credit.amount %></td>
+        <td><%= credit.purchase_date %></td>
+        <td><%= credit.is_paid %></td>
+        <td><%= credit.paid_date %></td>
+        <td><%= credit.cash_paid %></td>
+        <td><%= credit.daily_id %></td>
+        <td><%= link_to 'Show', credit %></td>
+        <td><%= link_to 'Edit', edit_credit_path(credit) %></td>
+        <td><%= link_to 'Destroy', credit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Credit', new_credit_path %>

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Dailies</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>D1</th>
+      <th>D2</th>
+      <th>P1</th>
+      <th>P2</th>
+      <th>Oil</th>
+      <th>Daily date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dailies.each do |daily| %>
+      <tr>
+        <td><%= daily.d1 %></td>
+        <td><%= daily.d2 %></td>
+        <td><%= daily.p1 %></td>
+        <td><%= daily.p2 %></td>
+        <td><%= daily.oil %></td>
+        <td><%= daily.daily_date %></td>
+        <% if @dailies[-1] == daily%>
+        <td><%= link_to 'Show', daily %></td>
+        <td><%= link_to 'Edit', edit_daily_path(daily) %></td>
+        <td><%= link_to 'Destroy', daily, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

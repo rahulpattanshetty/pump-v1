@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone_number: MyString
+  oil_type: MyString
+  rate: 1.5
+  litres: 1.5
+  amount: 1.5
+  purchase_date: 2017-09-29
+  is_paid: false
+  paid_date: 2017-09-29
+  cash_paid: 1.5
+  daily_id: 1
+
+two:
+  name: MyString
+  phone_number: MyString
+  oil_type: MyString
+  rate: 1.5
+  litres: 1.5
+  amount: 1.5
+  purchase_date: 2017-09-29
+  is_paid: false
+  paid_date: 2017-09-29
+  cash_paid: 1.5
+  daily_id: 1

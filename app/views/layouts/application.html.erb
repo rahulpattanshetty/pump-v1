@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pump</title>
+
+
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap core CSS-->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+  <%= csrf_meta_tags %>
+</head>
+<body  class="fixed-nav sticky-footer bg-dark">
+<div class="container-fluid">
+	<div class="row">
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">Pattanshetti</a>
+    
+    
+	</nav>
+		<%= link_to "Home",dailies_path%> |
+		<%= link_to "Meter Reading", new_daily_path%> |
+		<%= link_to "Add customer",new_customer_path%> |
+		<%= link_to "Dashboard", dashboard_sales_path%> |
+		<%= link_to "Credits", credits_path%>
+		<%= yield %>
+	</div>
+	
+</div>
+
+</body>
+</html>

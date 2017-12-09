@@ -1,0 +1,59 @@
+<%= form_for(@credit, remote: true) do |f| %>
+<table border="1">
+  <thead>
+
+    <tr>
+      <th>Name</th>
+      <th>Phone No.</th>
+      <th>Oil type</th>
+      <th>Rate</th>
+      <th>litres</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= f.text_field :name %></td>
+      <td><%= f.text_field :phone_number %></td>
+      <td><%= f.select :oil_type,["Diesel","Petrol"] %></td>
+      <td><%=f.text_field :rate%></td>
+      <td><%= f.text_field :litres %></td>
+      <td><%= f.text_field :amount %></td>
+    </tr>
+    <tr>
+    <%=f.hidden_field :daily_id, value:@daily.id%>
+      <%=f.hidden_field :purchase_date, value:Date.today%>
+      <td><%=f.submit "Add"%></td>
+    </tr>
+  </tbody>
+
+</table>
+
+<%end%>
+<script>
+  
+  var oilTypeHandle = document.getElementById('credit_oil_type');
+  var rateHandle =document.getElementById('credit_rate');
+  var litresHandle = document.getElementById('credit_litres')
+  var amountHandle = document.getElementById('credit_amount');
+
+  oilTypeHandle.addEventListener('blur',function(){
+    if (oilTypeHandle.value == "Diesel") {
+      rateHandle.value = <%=@credit.rate=@daily.diesel_price%>
+    }else{
+      rateHandle.value = <%=@credit.rate=@daily.petrol_price%>      
+    }
+    });
+  litresHandle.addEventListener('change',function(){
+    var litres = Number(document.getElementById('credit_litres').value)
+    var rate = Number(rateHandle.value)
+    console.log(litres)
+    console.log(rate)
+
+    if (litres != "") {
+      
+      amountHandle.value = (rate * litres) 
+ 
+    }
+      });
+</script>

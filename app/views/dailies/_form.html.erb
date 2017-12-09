@@ -1,0 +1,70 @@
+<%= form_for(@daily) do |f| %>
+  <% if @daily.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daily.errors.count, "error") %> prohibited this daily from being saved:</h2>
+
+      <ul>
+      <% @daily.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Petrol Price</th>
+      <th>Diesel Price</th>
+      <th>Oil</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%=f.number_field :petrol_price, class: :text_field, step: :any%></td>
+      <td><%=f.number_field :diesel_price, class: :text_field, step: :any, min:1%></td>
+      <td><%=f.text_field :oil%></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table border="1">
+  <thead>
+  <tr>
+    <th>Diesel1</th>
+    <th>Diesel2</th>
+    <th>Petrol1</th>
+    <th>Petrol2</th>
+  </tr>
+  </thead>
+  
+ <!--<tbody>
+    <tr>
+      <td><#%= @last_reading.first.d1%></td>
+      <td><#%= @last_reading.first.d2%></td>
+      <td><#%= @last_reading.first.p1%></td>
+      <td><#%= @last_reading.first.p2%></td>
+
+    </tr>
+  </tbody>
+  -->
+   <tbody>
+    <tr>
+      <td><%= f.number_field  :d1, class: :text_field, step: :any %></td>
+      <td><%= f.number_field  :d2, class: :text_field, step: :any %></td>
+      <td><%= f.number_field  :p1, class: :text_field, step: :any %></td>
+      <td><%= f.number_field  :p2, class: :text_field, step: :any %></td>
+
+    </tr>
+  </tbody>
+</table>
+  <br>
+<%=f.hidden_field :daily_date, value:Date.today%>
+  <div class="actions">
+    <%= f.submit "calculate" %>
+  </div>
+<% end %>
+
+<br>
+
+
+    

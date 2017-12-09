@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @credit.name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @credit.phone_number %>
+</p>
+
+<p>
+  <strong>Oil type:</strong>
+  <%= @credit.oil_type %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @credit.rate %>
+</p>
+
+<p>
+  <strong>Litres:</strong>
+  <%= @credit.litres %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @credit.amount %>
+</p>
+
+<p>
+  <strong>Purchase date:</strong>
+  <%= @credit.purchase_date %>
+</p>
+
+<p>
+  <strong>Is paid:</strong>
+  <%= @credit.is_paid %>
+</p>
+
+<p>
+  <strong>Paid date:</strong>
+  <%= @credit.paid_date %>
+</p>
+
+<p>
+  <strong>Cash paid:</strong>
+  <%= @credit.cash_paid %>
+</p>
+
+<p>
+  <strong>Daily:</strong>
+  <%= @credit.daily_id %>
+</p>
+
+<%= link_to 'Edit', edit_credit_path(@credit) %> |
+<%= link_to 'Back', credits_path %>
+
+

@@ -1,0 +1,20 @@
+
+
+<%=render 'reading'%>
+<ul id="creditList">
+  <%@credits.each do |credit|%>
+  <li id="li_<%=credit.id%>"><%=credit.name%>-litres(<%=credit.litres%>)-Amt(<%=credit.amount%>)
+  <%=link_to "delete",credit_path(credit.id),method: :delete,data:{confirm:"Are you are", remote:true}%>
+    </li>
+    <%end%>
+</ul>
+<br><br>
+<%= link_to 'Edit', edit_daily_path(@daily) %> |
+<%= link_to 'Back', dailies_path %>
+<br><br>
+
+
+
+
+<%= render 'credits/table' %>
+

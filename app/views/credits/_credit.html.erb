@@ -1,0 +1,5 @@
+<li id="li_<%=@credit.id%>">
+<%=@credit.name%>-litres(<%=@credit.litres%>)-Amt(<%=@credit.amount%>)
+	<%=link_to "delete",credit_path(@credit.id),method: :delete,data:{confirm:"Are you sure",remote:true}%>
+
+</li>

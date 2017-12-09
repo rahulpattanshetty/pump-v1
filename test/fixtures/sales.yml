@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  diesel: 1.5
+  petrol: 1.5
+  diesel_price: 1.5
+  petrol_price: 1.5
+  oil: 1.5
+  reading_date: 2017-09-28
+  daily_id: 1
+
+two:
+  diesel: 1.5
+  petrol: 1.5
+  diesel_price: 1.5
+  petrol_price: 1.5
+  oil: 1.5
+  reading_date: 2017-09-28
+  daily_id: 1

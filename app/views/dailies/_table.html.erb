@@ -1,0 +1,53 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>Diesel1</th>
+      <th>Diesel2</th>
+      <th>Total reading</th>
+      <th>Price</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= d1=@daily.d1 - @before_reading.d1 %></td>
+      <td><%= d2=@daily.d2 - @before_reading.d2 %></td>
+      <td><%=sum = d1 + d2%></td>
+      <td><%= @daily.diesel_price%></td>
+      <td><%= total_d = sum * @daily.diesel_price%></td>
+    </tr>
+  </tbody>
+
+</table>
+<br>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Petrol1</th>
+      <th>Petrol2</th>
+      <th>Total reading</th>
+      <th>Price</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= p1=@daily.p1 - @before_reading.p1 %></td>
+      <td><%= p2=@daily.p2 - @before_reading.p2 %></td>
+      <td><%= sum = p1 + p2%></td>
+      <td><%= @daily.petrol_price%></td>
+      <td><%= total_p= sum * @daily.petrol_price%></td>
+    </tr>
+  </tbody>
+
+</table>
+
+<br>
+<table border="1">
+    <tr><th>Diesel</th><td><%=total_d%></td></tr>
+    <tr><th>Petrol</th><td><%=total_p%></td></tr>
+    <tr><th>Oil</th><td><%=@daily.oil%></td></tr>
+    <tr><th>Amount</th><td><%=total=(total_d + total_p + @daily.oil.to_f).round(2) %></td></tr>
+</table>
